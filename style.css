@@ -100,7 +100,6 @@ section.start {
     max-width: calc(959.5px - 160px);
     min-width: calc(959.5px - 160px);
     width: calc(959.5px - 160px);
-
     margin-left: 80px;
     margin-right: 80px;
     margin-top: 116px;
@@ -149,7 +148,6 @@ section.start {
       box-shadow: 0px 0px 0px 1px rgba(16, 24, 40, 0.18) inset,
         0px -2px 0px 0px rgba(16, 24, 40, 0.05) inset,
         0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-
       color: #fff;
       text-align: center;
       font-family: Roboto;
@@ -171,6 +169,7 @@ section.start {
       color: #d40f7d;
     }
   }
+
   div.start-separator {
     width: 1px;
     min-width: 1px;
@@ -236,7 +235,6 @@ section.calculator-fr {
               font-size: 15px;
               font-style: normal;
               font-weight: 400;
-              /* line-height: 28px; */
               letter-spacing: -0.3px;
               margin-top: 0;
               margin-bottom: 0;
@@ -334,30 +332,36 @@ section.calculator-fr {
               font-weight: 600;
               line-height: 24px;
               text-transform: uppercase;
+              margin-left: 0px;
+              margin-top: 4px;
             }
 
-            > div:nth-child(2),
-            div:nth-child(3) {
+            .input-group {
               display: flex;
-              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              margin-top: 60px;
+              margin-bottom: 30px;
 
-              > div {
+              > div:first-child {
                 display: flex;
                 flex-direction: column;
+
                 > h4 {
                   color: #333;
                   font-family: Oswald;
                   font-size: 23px;
                   font-style: normal;
                   font-weight: 500;
-                  line-height: var(--Line-height-text-md, 24px);
+                  line-height: 24px;
                   letter-spacing: -0.46px;
                   text-transform: uppercase;
+                  margin: 0 0 4px 0;
                 }
 
                 > p {
                   overflow: hidden;
-                  color: var(--Gray-600, #475467);
+                  color: #475467;
                   text-overflow: ellipsis;
                   white-space: nowrap;
                   font-family: Roboto;
@@ -365,8 +369,120 @@ section.calculator-fr {
                   font-style: normal;
                   font-weight: 500;
                   line-height: 20px;
+                  margin: 0;
                 }
               }
+            }
+
+            .select-wrapper {
+              position: relative;
+              width: 196px;
+              margin-right: 28px;
+
+              select {
+                width: 100%;
+                padding: 10px 14px;
+                padding-right: 40px;
+                border: 1px solid #d0d5dd;
+                box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+                background-color: white;
+                font-family: Roboto, sans-serif;
+                font-size: 18px;
+                font-weight: 500;
+                color: #333;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23667085' stroke-width='1.66667' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+                background-size: 20px 20px;
+                text-align: center;
+                text-align-last: center;
+                -moz-text-align-last: center;
+              }
+            }
+
+            .input-wrapper {
+              position: relative;
+              width: 196px;
+              margin-right: 28px;
+
+              input {
+                width: 100%;
+                padding: 10px 14px;
+                padding-right: 50px;
+                border: 1px solid #d0d5dd;
+                color: rgba(102, 112, 133, 0.8);
+                text-align: left;
+                font-feature-settings: "liga" off;
+                font-family: Roboto;
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                box-sizing: border-box;
+              }
+
+              .input-wrapper input:focus {
+                outline: none;
+                border-color: #d40f7d;
+                box-shadow: 0 0 0 4px rgba(212, 15, 125, 0.1);
+              }
+
+              .unit {
+                position: absolute;
+                right: 14px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-weight: bold;
+                color: #333;
+                pointer-events: none;
+                font-family: Roboto;
+                font-size: 13px;
+              }
+            }
+
+            .calculate-button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 15.5px 20px;
+              background-color: #d40f7d;
+              color: white;
+              border: none;
+              font-family: Oswald;
+              font-size: 20px;
+              font-weight: 600;
+              cursor: pointer;
+              margin-top: 20px;
+              margin-left: 176px;
+              line-height: 20px;
+              width: 196px;
+              transition: background-color 0.3s, color 0.3s;
+
+              svg {
+                margin-right: 10px;
+                width: 21px;
+                height: 22px;
+              }
+
+              svg path {
+                stroke: currentColor;
+              }
+            }
+
+            .calculate-button:hover {
+              color: #d40f7d;
+              background-color: white;
+              border: 2px solid #d40f7d;
+            }
+
+            .calculate-button:active {
+              color: #d40f7d;
+              opacity: 0.5;
+              background-color: white;
+              border: 2px solid #d40f7d;
             }
           }
 

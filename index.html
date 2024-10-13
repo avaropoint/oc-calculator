@@ -51,35 +51,41 @@
           </div>
           <div class="calculator-cell">
             <h1>CALCULATOR INPUT</h1>
-            <div>
+            <div class="input-group">
               <div>
                 <h4>PROJECT LOCATION</h4>
                 <p>Closest City to the Project<sup>#</sup></p>
               </div>
-              <div>
+              <div class="select-wrapper">
                 <select>
-                  <option>Select City</option>
+                  <option value="">Select City</option>
                   <option>Vancouver</option>
                   <option>Calgary</option>
                   <option>Regina</option>
                   <option>Winnipeg</option>
                   <option>Toronto</option>
                   <option>Montreal</option>
-                  <option>Frederiction</option>
+                  <option>Fredericton</option>
                   <option>Halifax</option>
                 </select>
               </div>
             </div>
-            <div>
+            <div class="input-group">
               <div>
-                <h4>INUSLATION REQUIREMENTS</h4>
+                <h4>INSULATION REQUIREMENTS</h4>
                 <p>Number of Square Feet of the Project</p>
               </div>
-              <div>
-                <input type="text">
+              <div class="input-wrapper">
+                <input type="text" placeholder="# of square feet">
+                <span class="unit">sq ft</span>
               </div>
             </div>
-            <button><icon src="./calculator.svg"></icon>Calculate</button>
+            <button class="calculate-button">
+              <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.9979 5.19529L4.62017 16.573M6.68884 9.33263V5.19529M4.62017 7.26396H8.75751M11.8605 14.5043H15.9979M5.96481 20.1931H14.6532C16.3911 20.1931 17.26 20.1931 17.9238 19.8549C18.5076 19.5574 18.9823 19.0827 19.2798 18.4989C19.618 17.8351 19.618 16.9662 19.618 15.2283V6.53993C19.618 4.80208 19.618 3.93316 19.2798 3.26939C18.9823 2.68552 18.5076 2.21082 17.9238 1.91333C17.26 1.57512 16.3911 1.57512 14.6532 1.57512H5.96481C4.22696 1.57512 3.35804 1.57512 2.69427 1.91333C2.1104 2.21082 1.6357 2.68552 1.33821 3.26939C1 3.93316 1 4.80208 1 6.53993V15.2283C1 16.9662 1 17.8351 1.33821 18.4989C1.6357 19.0827 2.1104 19.5574 2.69427 19.8549C3.35804 20.1931 4.22696 20.1931 5.96481 20.1931Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Calculate
+            </button>
           </div>
           <div class="calculator-cell"></div>
         </div>
