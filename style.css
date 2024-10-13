@@ -488,6 +488,85 @@ section.calculator-fr {
 
           &:nth-child(3) {
             width: 764px;
+            padding: 33px 20px 14px 34px;
+
+            > h1 {
+              margin: 0;
+              color: #d40f7d;
+              font-feature-settings: "liga" off;
+              font-family: Oswald;
+              font-size: 33px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 24px;
+              letter-spacing: -0.66px;
+              text-transform: uppercase;
+            }
+
+            > div {
+              > div {
+                display: flex;
+                flex-direction: row;
+
+                > div {
+                  display: flex;
+                  flex-direction: column;
+                }
+
+                > div:first-child {
+                  width: 200px;
+                }
+
+                > div:nth-child(2) {
+                  width: 200px;
+                }
+
+                > div:nth-child(3) {
+                  width: 300px;
+                }
+
+                > div.result-header {
+                  > p {
+                    color: #333;
+                    text-align: center;
+                    font-family: Roboto;
+                    font-size: 13px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 14px;
+                  }
+                }
+              }
+              > div.result-item {
+                > div {
+                  > p {
+                    margin: 0;
+                    color: #d40f7d;
+                    font-family: Oswald;
+                    font-size: 36px;
+                    font-weight: 600;
+                    text-align: center;
+                  }
+                  > h3 {
+                    margin: 0;
+                    color: #333;
+                    font-family: Roboto;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                  }
+                }
+                > div:last-child {
+                  > p {
+                    color: #333;
+                    font-family: Roboto;
+                    font-size: 12px;
+                    font-weight: normal;
+                    margin: 5px 0 0 0;
+                  }
+                }
+              }
+            }
           }
         }
       }
