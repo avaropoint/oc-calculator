@@ -5,25 +5,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="start" id="startScreen">
-      <div class="start-en start-content start-content--en" id="startEnglish">
+    <section class="start">
+      <div class="start-en">
         <h1>GET INSPIRED.<br />BUILD WITH PINK<sup>®</sup>.</h1>
         <p>
           <span class="semiBold">Look UP! </span>Artist Sara Petroff beautifully
-          illustrates Owens Corning's sustainability initiatives with a stunning
+          illustrates Owens Corning’s sustainability initiatives with a stunning
           display of 78 butterflies. Each butterfly represents a bag of
           insulation saved by in a 10,000 sq ft. project, all set against the
-          inspiring backdrop of PINK® FIBERGLAS<sup>®</sup> clouds.
+          inspiring backdrop of PINK® FIBERGLAS<sup>®</sup> clouds.
         </p>
         <p>
           Use our calculator to see how you can reduce the environmental impact
           by choosing Owens Corning QuietZone<sup>®</sup> insulation for your
           next project.
         </p>
-        <button id="startButtonEN">Get started</button>
+        <button>Get started</button>
       </div>
       <span class="start-separator"></span>
-      <div class="start-fr start-content start-content--fr" id="startFrench">
+      <div class="start-fr">
         <h1>LAISSEZ-VOUS INSPIRER.<br />CONSTRUIRE EN ROSE<sup>MD</sup>.</h1>
         <p>
           <span class="semiBold">Ouvrez grand les yeux! </span>L'artiste Sara
@@ -39,47 +39,47 @@
           projet. Utilisez l'outil ci-dessous pour calculer les économies
           réalisées.
         </p>
-        <button id="startButtonFR">Commencer</button>
+        <button>Commencer</button>
       </div>
     </section>
-    <section class="calculator-en calculator calculator--en" id="calculatorEnglish">
-      <div class="calculator-container calculator__container">
-        <div class="calculator-row calculator__row">
-          <div class="calculator-logo calculator__logo">
+    <section class="calculator-en">
+      <div class="calculator-container">
+        <div class="calculator-row">
+          <div class="calculator-logo">
             <img src="logo.svg" />
           </div>
-          <div class="calculator-cell calculator__product-info">
-            <p class="product-info__description">Calculate the benefits of using</p>
-            <h2 class="product-info__name">QuietZone<sup>®</sup></h2>
-            <h2 class="product-info__name">PINK NEXT GEN<sup>®</sup></h2>
-            <h2 class="product-info__name">FIBERGLAS<sup>®</sup></h2>
-            <h2 class="product-info__name">Acoustic Insulation</h2>
-            <p class="product-info__comparison">vs comparable mineral wool insulation.</p>
-            <h3 class="product-info__features-title">PRODUCT FEATURES</h3>
-            <div class="product-info__features">
-              <div class="feature-item">
+          <div class="calculator-cell">
+            <p>Calculate the benefits of using</p>
+            <h2>QuietZone<sup>®</sup></h2>
+            <h2>PINK NEXT GEN<sup>®</sup></h2>
+            <h2>FIBERGLAS<sup>®</sup></h2>
+            <h2>Acoustic Insulation</h2>
+            <p>vs comparable mineral wool insulation.</p>
+            <h3>PRODUCT FEATURES</h3>
+            <div>
+              <div>
                 <img src="product-installation.svg" />
                 <p>Ease of Installation</p>
               </div>
-              <div class="feature-item">
+              <div>
                 <img src="product-soft.svg" />
                 <p>Soft as<br />Cotton</p>
               </div>
-              <div class="feature-item">
+              <div>
                 <img src="product-recycled.svg" />
                 <p>Recycled Content</p>
               </div>
             </div>
           </div>
-          <div class="calculator-cell calculator__input">
-            <h1 class="input__title">CALCULATOR INPUT</h1>
+          <div class="calculator-cell">
+            <h1>CALCULATOR INPUT</h1>
             <div class="input-group">
-              <div class="input-group__label">
+              <div>
                 <h4>PROJECT LOCATION</h4>
                 <p>Closest City to the Project<sup>#</sup></p>
               </div>
               <div class="select-wrapper">
-                <select id="citySelect" class="city-select">
+                <select>
                   <option value="">Select City</option>
                   <option>Vancouver</option>
                   <option>Calgary</option>
@@ -93,17 +93,17 @@
               </div>
             </div>
             <div class="input-group">
-              <div class="input-group__label">
+              <div>
                 <h4>INSULATION REQUIREMENTS</h4>
                 <p>Number of Square Feet of the Project</p>
               </div>
               <div class="input-wrapper">
-                <input id="squareFeetInput" type="text" placeholder="# of square feet" class="square-feet-input" />
-                <span class="unit input-unit">sq ft</span>
+                <input type="text" placeholder="# of square feet" />
+                <span class="unit">sq ft</span>
               </div>
             </div>
             <div>
-              <button class="calculate-button" id="calculateButton">
+              <button class="calculate-button">
                 <svg
                   width="21"
                   height="22"
@@ -123,41 +123,41 @@
               </button>
             </div>
           </div>
-          <div class="calculator-cell calculator__results">
-            <h1 class="results__title">Results</h1>
-            <div class="results__content">
-              <div class="result-header results__header">
-                <div class="results__header-item">
+          <div class="calculator-cell">
+            <h1>Results</h1>
+            <div>
+              <div>
+                <div class="result-header">
                   <p>
                     QUIETZONE<sup>®</sup> PINK NEXT GEN<sup>®</sup
                     ><br />FIBERGLAS<sup>®</sup> Acoustic Insulation
                   </p>
                 </div>
-                <div class="results__header-item">
+                <div class="result-header">
                   <p>Mineral Wool<br />Batt Insulation</p>
                 </div>
-                <div class="results__header-item"></div>
+                <div></div>
               </div>
-              <div class="result-item results__item">
-                <div id="fibergas_bags" class="results__value">
+              <div class="result-item">
+                <div id="fibergas_bags">
                   <p>0</p>
                 </div>
-                <div id="mineral_wool_bags" class="results__value">
+                <div id="mineral_wool_bags">
                   <p>0</p>
                 </div>
-                <div class="results__label">
+                <div>
                   <h3>BAGS OF INSULATION REQUIRED</h3>
                   <p>3.5" Thickness, 16" O.C. Framing</p>
                 </div>
               </div>
-              <div class="result-item results__item">
-                <div id="fibergas_pounds" class="results__value">
+              <div class="result-item">
+                <div id="fibergas_pounds">
                   <p>0</p>
                 </div>
-                <div id="mineral_wool_pounds" class="results__value">
+                <div id="mineral_wool_pounds">
                   <p>0</p>
                 </div>
-                <div class="results__label">
+                <div>
                   <h3>POUNDS OF FIBER USED</h3>
                   <p>
                     Based on density of 2.5 lbs/ft<sup>3</sup> and 0.8
@@ -165,19 +165,19 @@
                   </p>
                 </div>
               </div>
-              <div class="result-item-separator results__separator">
+              <div class="result-item-separator">
                 <div></div>
                 <div></div>
                 <div><p>OR</p></div>
               </div>
-              <div class="result-item results__item">
-                <div id="fibergas_tons" class="results__value">
+              <div class="result-item">
+                <div id="fibergas_tons">
                   <p>0</p>
                 </div>
-                <div id="mineral_wool_tons" class="results__value">
+                <div id="mineral_wool_tons">
                   <p>0</p>
                 </div>
-                <div class="results__label">
+                <div>
                   <h3>METRIC TONS OF FIBER USED</h3>
                   <p>
                     Weight: QuietZone<sup>®</sup> 0.23 lbs/ft<sup>2</sup> and
@@ -185,14 +185,14 @@
                   </p>
                 </div>
               </div>
-              <div class="result-item results__item">
-                <div id="fibergas_co2" class="results__value">
+              <div class="result-item">
+                <div id="fibergas_co2">
                   <p>0</p>
                 </div>
-                <div id="mineral_wool_co2" class="results__value">
+                <div id="mineral_wool_co2">
                   <p>0</p>
                 </div>
-                <div class="results__label">
+                <div>
                   <h3>Tons of CO<sub>2</sub> Saved</h3>
                   <p>During Transportation<sup>‡</sup></p>
                 </div>
@@ -200,16 +200,16 @@
             </div>
           </div>
         </div>
-        <div class="calculator-row calculator__row">
+        <div class="calculator-row">
           <div class="calculator-empty"></div>
-          <div class="calculator-cell calculator__environmental-impact">
-            <h1 class="environmental-impact__title">ENVIRONMENTAL IMPACT</h1>
-            <p class="environmental-impact__description">
+          <div class="calculator-cell">
+            <h1>ENVIRONMENTAL IMPACT</h1>
+            <p>
               Using QuietZone<sup>®</sup> PINK NEXT GEN<sup>®</sup>
               FIBERGLAS<sup>®</sup> Acoustic Insulation in your next project<br />
               may reduce the environmental impact
             </p>
-            <div class="environmental-impact__content">
+            <div>
               <div>
                 <h4>SAVINGS OF</h4>
                 <h1>XXX</h1>
@@ -254,33 +254,33 @@
               </div>
             </div>
           </div>
-          <div class="calculator-cell calculator__additional-savings">
-            <h1 class="additional-savings__title">Additional Savings<sup>*</sup></h1>
-            <ul class="additional-savings__list">
-              <li class="additional-savings__item">
-                <img src="manufacturing.svg" class="additional-savings__icon" />
-                <p class="additional-savings__text">Manufacturing Energy and Raw Materials</p>
+          <div class="calculator-cell">
+            <h1>Additional Savings<sup>*</sup></h1>
+            <ul>
+              <li>
+                <img src="manufacturing.svg" />
+                <p>Manufacturing Energy and Raw Materials</p>
               </li>
-              <li class="additional-savings__item">
-                <img src="labour.svg" class="additional-savings__icon" />
-                <p class="additional-savings__text">Labour with Less Bags to Handle and Install</p>
+              <li>
+                <img src="labour.svg" />
+                <p>Labour with Less Bags to Handle and Install</p>
               </li>
-              <li class="additional-savings__item">
-                <img src="delivery.svg" class="additional-savings__icon" />
-                <p class="additional-savings__text">Delivery Costs</p>
+              <li>
+                <img src="delivery.svg" />
+                <p>Delivery Costs</p>
               </li>
-              <li class="additional-savings__item">
-                <img src="cost.svg" class="additional-savings__icon" />
-                <p class="additional-savings__text">Cost per Square Foot</p>
+              <li>
+                <img src="cost.svg" />
+                <p>Cost per Square Foot</p>
               </li>
             </ul>
           </div>
-          <div class="calculator-cell calculator__mission">
-            <div class="mission__content">
-              <h1 class="mission__title">Our Mission</h1>
-              <h2 class="mission__subtitle">TO BUILD A SUSTAINABLE FUTURE THROUGH MATERIAL INNOVATION</h2>
+          <div class="calculator-cell">
+            <div>
+              <h1>Our Mission</h1>
+              <h2>TO BUILD A SUSTAINABLE FUTURE THROUGH MATERIAL INNOVATION</h2>
             </div>
-            <div class="mission__description">
+            <div>
               <p>
                 When choosing a product for your project, consider first the
                 technical specifications needed. Select the product for
@@ -291,8 +291,8 @@
           </div>
         </div>
       </div>
-      <div class="disclaimer calculator__disclaimer">
-        <p class="disclaimer__text">
+      <div class="disclaimer">
+        <p>
           <sup>#</sup>Vancouver, Calgary, Regina and Winnipeg calculations are
           based on distance from Grand Forks, BC (mineral wool) and Edmonton, AB
           (fiberglass) manufacturing plants. Toronto, Montreal, Fredericton and
@@ -306,17 +306,16 @@
           1 ton. <sup>†</sup>
           <a
             href="https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/calculator/ghg-calculator.cfm#results"
-            class="disclaimer__link"
             >Source: NRCAN Greenhouse Gas Equivalencies Calculator</a
           >
         </p>
-        <p class="disclaimer__copyright">
+        <p>
           The colour PINK is a registered trademark of Owens Corning. © 2024
           Owens Corning. All Rights Reserved.
         </p>
       </div>
     </section>
-    <section class="calculator-fr calculator calculator--fr" id="calculatorFrench"></section>
+    <section class="calculator-fr"></section>
     <script src="index.js"></script>
   </body>
 </html>
