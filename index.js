@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startSection.style.display = "flex";
     calculatorEN.style.display = "none";
     calculatorFR.style.display = "none";
-    disclaimerEn.style.display = "none";
-    disclaimerFr.style.display = "none";
     resetCalculator();
     clearTimeout(inactivityTimer);
   }
