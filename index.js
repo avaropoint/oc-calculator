@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const startSection = document.querySelector(".start");
-  const calculatorEN = document.querySelector(".calculator-en");
-  const calculatorFR = document.querySelector(".calculator-fr");
   const startButtonEN = document.querySelector(".start-en button");
   const startButtonFR = document.querySelector(".start-fr button");
+
+  const calculatorEN = document.querySelector(".calculator-en");
+  const calculatorFR = document.querySelector(".calculator-fr");
+
   const closeButtons = document.querySelectorAll(".close-button");
 
   let inactivityTimer;
@@ -24,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     startSection.style.display = "flex";
     calculatorEN.style.display = "none";
     calculatorFR.style.display = "none";
+    disclaimerEn.style.display = "none";
+    disclaimerFr.style.display = "none";
     resetCalculator();
     clearTimeout(inactivityTimer);
   }
@@ -40,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inactivityTimer = setTimeout(showStart, 120000); // 2 minutes
   }
 
+  // Show the start section when the page loads
   startButtonEN.addEventListener("click", () => showCalculator("en"));
   startButtonFR.addEventListener("click", () => showCalculator("fr"));
 
