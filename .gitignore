@@ -1,2 +1,3 @@
 # Don't check in zip files.
 /*.zip
+/.DS_Store
