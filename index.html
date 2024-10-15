@@ -44,6 +44,9 @@
     </section>
     <section class="calculator-en">
       <div class="calculator-container">
+        <button class="close-button">
+          <img src="close.svg" alt="Close" />
+        </button>
         <div class="calculator-row">
           <div class="calculator-logo">
             <img src="logo.svg" />
@@ -325,7 +328,292 @@
         </p>
       </div>
     </section>
-    <section class="calculator-fr"></section>
+    <section class="calculator-fr">
+      <div class="calculator-container">
+        <button class="close-button">
+          <img src="close.svg" alt="Close" />
+        </button>
+        <div class="calculator-row">
+          <div class="calculator-logo">
+            <img src="logo.svg" />
+          </div>
+          <div class="calculator-cell">
+            <p>Calculez les avantages liés à l'utilisation des</p>
+            <h2>MATELAS INSONORISANTS</h2>
+            <h2>ROSE NEXT GEN<sup>MD</sup></h2>
+            <h2>FIBERGLAS<sup>MD</sup></h2>
+            <h2>Quiétude<sup>MD</sup></h2>
+            <p>par rapport aux isolants en laine minérale comparables.</p>
+            <h3>CARACTÉRISTIQUES DU PRODUIT</h3>
+            <div>
+              <div>
+                <img src="product-installation.svg" />
+                <p>Facilité<br/>d'installation</p>
+              </div>
+              <div>
+                <img src="product-soft.svg" />
+                <p>Texture douce<br/>comme du coton</p>
+              </div>
+              <div>
+                <img src="product-recycled.svg" />
+                <p>Matériaux<br/>recyclés</p>
+              </div>
+            </div>
+          </div>
+          <div class="calculator-cell">
+            <h1>SAISIE DANS LE CALCULATEUR</h1>
+            <div class="input-group">
+              <div>
+                <h4>EMPLACEMENT DU PROJET</h4>
+                <p>Ville la plus proche du projet<sup>#</sup></p>
+              </div>
+              <div class="select-wrapper">
+                <select id="city-select" name="city-select">
+                  <option value="">Sélectionner la ville</option>
+                  <option value="vancouver">Vancouver</option>
+                  <option value="calgary">Calgary</option>
+                  <option value="regina">Regina</option>
+                  <option value="winnipeg">Winnipeg</option>
+                  <option value="toronto">Toronto</option>
+                  <option value="montreal">Montreal</option>
+                  <option value="fredericton">Fredericton</option>
+                  <option value="halifax">Halifax</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <div>
+                <h4>EXIGENCES EN MATIÈRE D'ISOLATION</h4>
+                <p>Nombre de pieds carrés requis pour le projet</p>
+              </div>
+              <div class="input-wrapper">
+                <input
+                  id="sqft-input"
+                  name="sqft-input"
+                  type="number"
+                  pattern="[0-9]*"
+                  placeholder="Nombre de pieds carrés"
+                />
+                <span class="unit">pi. ca.</span>
+              </div>
+            </div>
+            <div>
+              <button class="calculate-button">
+                <svg
+                  width="21"
+                  height="22"
+                  viewBox="0 0 21 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.9979 5.19529L4.62017 16.573M6.68884 9.33263V5.19529M4.62017 7.26396H8.75751M11.8605 14.5043H15.9979M5.96481 20.1931H14.6532C16.3911 20.1931 17.26 20.1931 17.9238 19.8549C18.5076 19.5574 18.9823 19.0827 19.2798 18.4989C19.618 17.8351 19.618 16.9662 19.618 15.2283V6.53993C19.618 4.80208 19.618 3.93316 19.2798 3.26939C18.9823 2.68552 18.5076 2.21082 17.9238 1.91333C17.26 1.57512 16.3911 1.57512 14.6532 1.57512H5.96481C4.22696 1.57512 3.35804 1.57512 2.69427 1.91333C2.1104 2.21082 1.6357 2.68552 1.33821 3.26939C1 3.93316 1 4.80208 1 6.53993V15.2283C1 16.9662 1 17.8351 1.33821 18.4989C1.6357 19.0827 2.1104 19.5574 2.69427 19.8549C3.35804 20.1931 4.22696 20.1931 5.96481 20.1931Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                CALCULER
+              </button>
+            </div>
+          </div>
+          <div class="calculator-cell">
+            <h1>RÉSULTATS</h1>
+            <div>
+              <div>
+                <div class="result-header">
+                  <p>
+                    MATELAS insonorisants<br/>PINK NEXT GEN<sup>®</sup
+                    ><br />FIBERGLAS<sup>®</sup> Acoustic Insulation
+                  </p>
+                </div>
+                <div class="result-header">
+                  <p>Mineral Wool<br />Batt Insulation</p>
+                </div>
+                <div></div>
+              </div>
+              <div class="result-item">
+                <div>
+                  <p id="fibergas_bags">0</p>
+                </div>
+                <div >
+                  <p id="mineral_wool_bags">0</p>
+                </div>
+                <div>
+                  <h3>BAGS OF INSULATION REQUIRED</h3>
+                  <p>3.5" Thickness, 16" O.C. Framing</p>
+                </div>
+              </div>
+              <div class="result-separator"></div>
+              <div class="result-item">
+                <div>
+                  <p id="fibergas_pounds">0</p>
+                </div>
+                <div>
+                  <p id="mineral_wool_pounds">0</p>
+                </div>
+                <div>
+                  <h3>POUNDS OF FIBER USED</h3>
+                  <p>
+                    Based on density of 2.5 lbs/ft<sup>3</sup> and 0.8
+                    lbs/ft<sup>3</sup>
+                  </p>
+                </div>
+              </div>
+              <div class="result-item-separator">
+                <div></div>
+                <div></div>
+                <div><p>OR</p></div>
+              </div>
+              <div class="result-item" style="margin-bottom: 12px;">
+                <div>
+                  <p id="fibergas_tons">0</p>
+                </div>
+                <div>
+                  <p id="mineral_wool_tons">0</p>
+                </div>
+                <div>
+                  <h3>METRIC TONS OF FIBER USED</h3>
+                  <p>
+                    Weight: QuietZone<sup>®</sup> 0.23 lbs/ft<sup>2</sup> and
+                    Mineral Wool 0.73 lbs/ft<sup>2</sup>
+                  </p>
+                </div>
+              </div>
+              <div class="result-separator" style="margin-bottom: 8px;"></div>
+              <div class="result-item">
+                <div>
+                  <p class="result-item-up-to">up to</p>
+                  <p id="fibergas_co2">0</p>
+                </div>
+                <div>
+                  <p class="result-item-up-to">up to</p>
+                  <p id="mineral_wool_co2">0</p>
+                </div>
+                <div>
+                  <h3>Tons of CO<sub>2</sub> Saved</h3>
+                  <p>During Transportation<sup>‡</sup></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calculator-row">
+          <div class="calculator-empty"></div>
+          <div class="calculator-cell">
+            <h1>ENVIRONMENTAL IMPACT</h1>
+            <p>
+              Using QuietZone<sup>®</sup> PINK NEXT GEN<sup>®</sup>
+              FIBERGLAS<sup>®</sup> Acoustic Insulation in your next project<br />
+              may reduce the environmental impact
+            </p>
+            <div>
+              <div>
+                <h4 style="font-size:23px">SAVINGS OF</h4>
+                <h1 style="font-size:52px">XXX</h1>
+                <p style="margin-top:0">Bags of Insulation<sup>*</sup></p>
+                <img src="insulation-bags.svg" />
+              </div>
+              <div class="environmental-pounds">
+                <h4 style="font-size:18px">SAVINGS OF</h4>
+                <h1 id="environmental_pounds">XXX</h1>
+                <p>Pounds of<br/>Fiber Used<sup>*</sup></p>
+                <h4>EQUIVALENT TO</h4>
+                <img src="black-bears.svg" />
+                <h1 id="environmental_bears">XXX</h1>
+                <p style="margin-top: 0;">Black Bears<sup>~</sup></p>
+              </div>
+              <div class="environmental-impact-or">
+                <p>OR</p>
+              </div>
+              <div class="environmental-tons">
+                <h4 style="font-size:18px">SAVINGS OF</h4>
+                <h1 id="environmental_tons">XXX</h1>
+                <p>Metric Tons Of<br/>Fiber Used<sup>*</sup></p>
+                <h4>EQUIVALENT TO</h4>
+                <img src="moose.svg" />
+                <h1 id="environmental_moose">XXX</h1>
+                <p style="margin-top: 0;">Moose<sup>~</sup></p>
+              </div>
+              <div class="environmental-impact-separator"></div>
+              <div class="environmental-co2">
+                <h4 style="font-size:18px">SAVINGS OF</h4>
+                <p style="font-size: 10px;margin-bottom:-10px;margin-top:-4px">up to</p>
+                <h1 id="environmental_co2">XXX</h1>
+                <p>
+                  Tons of CO<sub>2</sub><br/>Transportation<br/>Emissions Avoided<sup
+                    >*‡</sup
+                  >
+                </p>
+                <h4>EQUIVALENT TO</h4>
+                <img src="gasoline.svg" />
+                <h1 id="environmental_gasoline">XXX</h1>
+                <p style="margin-top: 0;">Litres of Gasoline<sup>†</sup></p>
+              </div>
+            </div>
+          </div>
+          <div class="calculator-cell">
+            <h1>Additional Savings<sup>*</sup></h1>
+            <ul>
+              <li>
+                <img src="manufacturing.svg" />
+                <p>Manufacturing Energy and Raw Materials</p>
+              </li>
+              <li>
+                <img src="labour.svg" />
+                <p>Labour with Less Bags to Handle and Install</p>
+              </li>
+              <li>
+                <img src="delivery.svg" />
+                <p>Delivery Costs</p>
+              </li>
+              <li>
+                <img src="cost.svg" />
+                <p>Cost per Square Foot</p>
+              </li>
+            </ul>
+          </div>
+          <div class="calculator-cell">
+            <div>
+              <h1>Our Mission</h1>
+              <h2>TO BUILD A SUSTAINABLE FUTURE THROUGH MATERIAL INNOVATION</h2>
+            </div>
+            <div>
+              <p>
+                When choosing a product for your project, consider first the
+                technical specifications needed. Select the product for
+                performance attributes to meet application requirements (fire,
+                acoustic, thermal, moisture, etc.).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="disclaimer">
+        <p>
+          <sup>#</sup>Vancouver, Calgary, Regina and Winnipeg calculations are
+          based on distance from Grand Forks, BC (mineral wool) and Edmonton, AB
+          (fiberglass) manufacturing plants. Toronto, Montreal, Fredericton and
+          Halifax calculations are bases on distance from Milton, ON (mineral
+          wool) and Scarborough, ON (fiberglass) manufacturing plants. ^AFB®
+          Acoustical Fire Batt. *Estimates based on stated assumptions. Savings
+          vary. <sup>‡</sup>Diesel engines produce 2.7 kg of CO2 per liter of
+          diesel fuel consumed (Natural Resources Canada). Heavy Truck On-Road
+          Average Fuel Consumption 29.3L/100KM (Natural Resources Canada).
+          ~Based on an average black bear weight of 300 lbs. and moose weight of
+          1 ton. <sup>†</sup>
+          <a
+            href="https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/calculator/ghg-calculator.cfm#results"
+            >Source: NRCAN Greenhouse Gas Equivalencies Calculator</a
+          >
+        </p>
+        <p>
+          The colour PINK is a registered trademark of Owens Corning. © 2024
+          Owens Corning. All Rights Reserved.
+        </p>
+      </div>
+    </section>
     <script src="index.js"></script>
   </body>
 </html>

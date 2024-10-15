@@ -164,17 +164,18 @@ section.start {
 }
 
 .close-button {
-  position: absolute;
-  top: 0px;
-  right: 0px;
+  position: fixed;
+  top: 8px;
+  right: 16px;
   background: none;
   border: none;
   cursor: pointer;
+  background-color: rgb(240, 241, 243, 1);
 }
 
-.close-button img {
-  width: 48px;
-  height: 48px;
+.close-button > img {
+  width: 24px !important;
+  height: 24px !important;
 }
 
 .calculator-logo,
