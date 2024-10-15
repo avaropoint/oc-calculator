@@ -483,6 +483,7 @@ section.start {
   color: #d40f7d;
   background-color: white;
   border: 2px solid #d40f7d;
+  padding: 14px 20px;
 }
 
 .calculate-button:active {
