@@ -441,8 +441,8 @@ section.start {
   font-size: 13px;
 }
 
-input::placeholder {
-  font-size: 12px;
+::placeholder {
+  font-size: 11px;
 }
 
 .calculate-button {
