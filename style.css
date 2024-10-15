@@ -643,6 +643,14 @@ section.start {
   height: 24px;
 }
 
+.result-item-up-to {
+  font-size: 8px !important;
+  font-family: Roboto !important;
+  font-weight: 400 !important;
+  margin-bottom: -10px !important;
+  color: #333 !important;
+}
+
 .calculator-row:last-child {
   height: 559px;
 }
