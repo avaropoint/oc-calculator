@@ -452,6 +452,10 @@ section.start {
   font-size: 13px;
 }
 
+::placeholder {
+  font-size: 11px;
+}
+
 .calculate-button {
   display: flex;
   align-items: center;
