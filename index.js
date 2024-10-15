@@ -113,8 +113,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // calculate litres of gas
     setLitresOfGas(
-      Math.round((distance_qz / 100) * 29.3).toFixed(2),
-      Math.round((distance_wool / 100) * 29.3).toFixed(2),
+      Math.round(
+        parseFloat(
+          Math.ceil(parseInt(sqft.value) / 92160) *
+            ((distance_qz * 1.07) / 1000) *
+            426
+        )
+      ).toFixed(2),
+      Math.round(
+        Math.ceil(parseInt(sqft.value) / 16536) *
+          ((distance_wool * 1.07) / 1000) *
+          426
+      ).toFixed(2),
       formatter
     );
   }
