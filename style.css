@@ -629,6 +629,8 @@ section.start {
   height: 1px;
   width: 692px;
   background: #e4e7ec;
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 
 .result-item-separator > div:last-child > p {
