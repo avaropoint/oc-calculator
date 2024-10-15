@@ -972,7 +972,7 @@ section.start {
   font-style: normal;
   font-weight: 600;
   text-transform: uppercase;
-  line-height: 35px;
+  line-height: 37px;
 }
 
 .calculator-row:last-child > .calculator-cell:last-child > div:last-child {
