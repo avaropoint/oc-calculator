@@ -82,7 +82,7 @@
                 <p>Closest City to the Project<sup>#</sup></p>
               </div>
               <div class="select-wrapper">
-                <select id="city-select" name="city-select">
+                <select id="city-select-en" name="city-select">
                   <option value="">Select City</option>
                   <option value="vancouver">Vancouver</option>
                   <option value="calgary">Calgary</option>
@@ -102,17 +102,18 @@
               </div>
               <div class="input-wrapper">
                 <input
-                  id="sqft-input"
+                  id="sqft-input-en"
                   name="sqft-input"
                   type="number"
                   pattern="[0-9]*"
                   placeholder="# of square feet"
+                  style="font-size: 18px"
                 />
                 <span class="unit">sq ft</span>
               </div>
             </div>
             <div>
-              <button class="calculate-button">
+              <button id="calculate-button-en" class="calculate-button">
                 <svg
                   width="21"
                   height="22"
@@ -149,10 +150,10 @@
               </div>
               <div class="result-item">
                 <div>
-                  <p id="fibergas_bags">0</p>
+                  <p class="fibergas_bags">0</p>
                 </div>
-                <div >
-                  <p id="mineral_wool_bags">0</p>
+                <div>
+                  <p class="mineral_wool_bags">0</p>
                 </div>
                 <div>
                   <h3>BAGS OF INSULATION REQUIRED</h3>
@@ -162,10 +163,10 @@
               <div class="result-separator"></div>
               <div class="result-item">
                 <div>
-                  <p id="fibergas_pounds">0</p>
+                  <p class="fibergas_pounds">0</p>
                 </div>
                 <div>
-                  <p id="mineral_wool_pounds">0</p>
+                  <p class="mineral_wool_pounds">0</p>
                 </div>
                 <div>
                   <h3>POUNDS OF FIBER USED</h3>
@@ -180,12 +181,12 @@
                 <div></div>
                 <div><p>OR</p></div>
               </div>
-              <div class="result-item" style="margin-bottom: 12px;">
+              <div class="result-item" style="margin-bottom: 12px">
                 <div>
-                  <p id="fibergas_tons">0</p>
+                  <p class="fibergas_tons">0</p>
                 </div>
                 <div>
-                  <p id="mineral_wool_tons">0</p>
+                  <p class="mineral_wool_tons">0</p>
                 </div>
                 <div>
                   <h3>METRIC TONS OF FIBER USED</h3>
@@ -195,15 +196,15 @@
                   </p>
                 </div>
               </div>
-              <div class="result-separator" style="margin-bottom: 8px;"></div>
+              <div class="result-separator" style="margin-bottom: 8px"></div>
               <div class="result-item">
                 <div>
                   <p class="result-item-up-to">up to</p>
-                  <p id="fibergas_co2">0</p>
+                  <p class="fibergas_co2">0</p>
                 </div>
                 <div>
                   <p class="result-item-up-to">up to</p>
-                  <p id="mineral_wool_co2">0</p>
+                  <p class="mineral_wool_co2">0</p>
                 </div>
                 <div>
                   <h3>Tons of CO<sub>2</sub> Saved</h3>
@@ -224,46 +225,55 @@
             </p>
             <div>
               <div>
-                <h4 style="font-size:23px">SAVINGS OF</h4>
-                <h1 style="font-size:52px">XXX</h1>
-                <p style="margin-top:0">Bags of Insulation<sup>*</sup></p>
+                <h4 style="font-size: 23px">SAVINGS OF</h4>
+                <h1 class="environmental_bags_saved" style="font-size: 52px">
+                  XXX
+                </h1>
+                <p style="margin-top: 0">Bags of Insulation<sup>*</sup></p>
                 <img src="insulation-bags.svg" />
               </div>
               <div class="environmental-pounds">
-                <h4 style="font-size:18px">SAVINGS OF</h4>
-                <h1 id="environmental_pounds">XXX</h1>
-                <p>Pounds of<br/>Fiber Used<sup>*</sup></p>
+                <h4 style="font-size: 18px">SAVINGS OF</h4>
+                <h1 class="environmental_pounds">XXX</h1>
+                <p>Pounds of<br />Fiber Used<sup>*</sup></p>
                 <h4>EQUIVALENT TO</h4>
                 <img src="black-bears.svg" />
-                <h1 id="environmental_bears">XXX</h1>
-                <p style="margin-top: 0;">Black Bears<sup>~</sup></p>
+                <h1 class="environmental_bears">XXX</h1>
+                <p style="margin-top: 0">Black Bears<sup>~</sup></p>
               </div>
               <div class="environmental-impact-or">
                 <p>OR</p>
               </div>
               <div class="environmental-tons">
-                <h4 style="font-size:18px">SAVINGS OF</h4>
-                <h1 id="environmental_tons">XXX</h1>
-                <p>Metric Tons Of<br/>Fiber Used<sup>*</sup></p>
+                <h4 style="font-size: 18px">SAVINGS OF</h4>
+                <h1 class="environmental_tons">XXX</h1>
+                <p>Metric Tons Of<br />Fiber Used<sup>*</sup></p>
                 <h4>EQUIVALENT TO</h4>
                 <img src="moose.svg" />
-                <h1 id="environmental_moose">XXX</h1>
-                <p style="margin-top: 0;">Moose<sup>~</sup></p>
+                <h1 class="environmental_moose">XXX</h1>
+                <p style="margin-top: 0">Moose<sup>~</sup></p>
               </div>
               <div class="environmental-impact-separator"></div>
               <div class="environmental-co2">
-                <h4 style="font-size:18px">SAVINGS OF</h4>
-                <p style="font-size: 10px;margin-bottom:-10px;margin-top:-4px">up to</p>
-                <h1 id="environmental_co2">XXX</h1>
+                <h4 style="font-size: 18px">SAVINGS OF</h4>
+                <p
+                  style="
+                    font-size: 10px;
+                    margin-bottom: -10px;
+                    margin-top: -4px;
+                  "
+                >
+                  up to
+                </p>
+                <h1 class="environmental_co2">XXX</h1>
                 <p>
-                  Tons of CO<sub>2</sub><br/>Transportation<br/>Emissions Avoided<sup
-                    >*‡</sup
-                  >
+                  Tons of CO<sub>2</sub><br />Transportation<br />Emissions
+                  Avoided<sup>*‡</sup>
                 </p>
                 <h4>EQUIVALENT TO</h4>
                 <img src="gasoline.svg" />
-                <h1 id="environmental_gasoline">XXX</h1>
-                <p style="margin-top: 0;">Litres of Gasoline<sup>†</sup></p>
+                <h1 class="environmental_gasoline">XXX</h1>
+                <p style="margin-top: 0">Litres of Gasoline<sup>†</sup></p>
               </div>
             </div>
           </div>
@@ -338,37 +348,59 @@
             <img src="logo.svg" />
           </div>
           <div class="calculator-cell">
-            <p style="font-size: 14px;">Calculez les avantages liés à l'utilisation des</p>
-            <h2 style="margin-bottom: 30px;">MATELAS INSONORISANTS</h2>
+            <p style="font-size: 14px">
+              Calculez les avantages liés à l'utilisation des
+            </p>
+            <h2>matelas insonorisants</h2>
             <h2>ROSE NEXT GEN<sup>MD</sup></h2>
             <h2>FIBERGLAS<sup>MD</sup></h2>
-            <h2 style="padding-top: 0;margin-bottom: 16px">Quiétude<sup>MD</sup></h2>
-            <p>par rapport aux isolants en laine<br/>minérale comparables.</p>
-            <h3 style="margin-top:0">CARACTÉRISTIQUES DU PRODUIT</h3>
-            <div style="margin-top:4px">
+            <h2 style="padding-top: 0; margin-bottom: 16px">
+              Quiétude<sup>MD</sup>
+            </h2>
+            <p>par rapport aux isolants en laine<br />minérale comparables.</p>
+            <h3 style="margin-top: 1.2rem">CARACTÉRISTIQUES DU PRODUIT</h3>
+            <div style="margin-top: 4px">
               <div>
-                <img style="width: 42px;height: 51px;" src="product-installation.svg" />
-                <p style="margin-top: 4px;font-size: 12px;">Facilité<br/>d'installation</p>
+                <img
+                  style="width: 42px; height: 51px"
+                  src="product-installation.svg"
+                />
+                <p style="margin-top: 4px; font-size: 12px">
+                  Facilité<br />d'installation
+                </p>
               </div>
               <div>
-                <img style="width:26px;height: 51px;" src="product-soft.svg" />
-                <p style="margin-top: 4px;font-size: 12px;">Texture douce<br/>comme du coton</p>
+                <img style="width: 26px; height: 51px" src="product-soft.svg" />
+                <p style="margin-top: 4px; font-size: 12px">
+                  Texture douce<br />comme du coton
+                </p>
               </div>
               <div>
-                <img style="width:21px;height: 51px;"  src="product-recycled.svg" />
-                 <p style="margin-top: 4px;font-size: 12px;">Matériaux<br/>recyclés</p>
+                <img
+                  style="width: 21px; height: 51px"
+                  src="product-recycled.svg"
+                />
+                <p style="margin-top: 4px; font-size: 12px">
+                  Matériaux<br />recyclés
+                </p>
               </div>
             </div>
           </div>
           <div class="calculator-cell">
-            <h1 style="font-size: 31px;">SAISIE DANS LE CALCULATEUR</h1>
+            <h1 style="font-size: 31px">SAISIE DANS LE CALCULATEUR</h1>
             <div class="input-group">
               <div>
-                <h4 style="font-size: 22px;">EMPLACEMENT DU PROJET</h4>
-                <p style="margin-top: 4px;">Ville la plus proche du projet<sup>#</sup></p>
+                <h4 style="font-size: 22px">EMPLACEMENT DU PROJET</h4>
+                <p style="margin-top: 4px">
+                  Ville la plus proche du projet<sup>#</sup>
+                </p>
               </div>
               <div class="select-wrapper">
-                <select id="city-select" name="city-select" style="font-size:15px">
+                <select
+                  id="city-select-fr"
+                  name="city-select"
+                  style="font-size: 15px"
+                >
                   <option value="">Sélectionner la ville</option>
                   <option value="vancouver">Vancouver</option>
                   <option value="calgary">Calgary</option>
@@ -383,23 +415,25 @@
             </div>
             <div class="input-group">
               <div>
-                <h4 style="font-size: 22px;">EXIGENCES EN MATIÈRE D'ISOLATION</h4>
+                <h4 style="font-size: 22px">
+                  EXIGENCES EN MATIÈRE D'ISOLATION
+                </h4>
                 <p>Nombre de pieds carrés requis pour le projet</p>
               </div>
               <div class="input-wrapper">
                 <input
-                  id="sqft-input"
+                  id="sqft-input-fr"
                   name="sqft-input"
                   type="number"
                   pattern="[0-9]*"
                   placeholder="Nombre de pieds carrés"
-                  style="font-size: 11px;"
+                  style="font-size: 15px"
                 />
                 <span class="unit">pi. ca.</span>
               </div>
             </div>
             <div>
-              <button class="calculate-button">
+              <button id="calculate-button-fr" class="calculate-button">
                 <svg
                   width="21"
                   height="22"
@@ -420,12 +454,12 @@
             </div>
           </div>
           <div class="calculator-cell">
-            <h1 style="font-size: 31px;">RÉSULTATS</h1>
+            <h1 style="font-size: 31px">RÉSULTATS</h1>
             <div>
               <div>
                 <div class="result-header">
                   <p>
-                    MATELAS insonorisants<br/>ROSE NEXT GEN<sup>MD</sup
+                    MATELAS insonorisants<br />ROSE NEXT GEN<sup>MD</sup
                     ><br />FIBERGLAS<sup>MD</sup> QUIÉTUDE<sup>MD</sup>
                   </p>
                 </div>
@@ -436,62 +470,70 @@
               </div>
               <div class="result-item">
                 <div>
-                  <p id="fibergas_bags">0</p>
-                </div>
-                <div >
-                  <p id="mineral_wool_bags">0</p>
+                  <p class="fibergas_bags">0</p>
                 </div>
                 <div>
-                  <h3 style="font-size: 18px;">NOMBRE DE SACS D'ISOLANT REQUIS</h3>
+                  <p class="mineral_wool_bags">0</p>
+                </div>
+                <div>
+                  <h3 style="font-size: 18px">
+                    NOMBRE DE SACS D'ISOLANT REQUIS
+                  </h3>
                   <p>3,5 po d'épaisseur, ossature à 16 po c.-à-c.</p>
                 </div>
               </div>
               <div class="result-separator"></div>
               <div class="result-item">
                 <div>
-                  <p id="fibergas_pounds">0</p>
+                  <p class="fibergas_pounds">0</p>
                 </div>
                 <div>
-                  <p id="mineral_wool_pounds">0</p>
+                  <p class="mineral_wool_pounds">0</p>
                 </div>
                 <div>
-                  <h3 style="font-size: 18px;">LIVRES DE FIBRES UTILISÉES</h3>
+                  <h3 style="font-size: 18px">LIVRES DE FIBRES UTILISÉES</h3>
                   <p>
-                    Selon une densité de 2,5 lb/pi<sup>3</sup> et de 0,8 lb/pi<sup>3</sup>
+                    Selon une densité de 2,5 lb/pi<sup>3</sup> et de 0,8
+                    lb/pi<sup>3</sup>
                   </p>
                 </div>
               </div>
               <div class="result-item-separator">
                 <div></div>
                 <div></div>
-                <div><p style="margin-top:0;margin-bottom: 0;">OU</p></div>
+                <div><p style="margin-top: 0; margin-bottom: 0">OU</p></div>
               </div>
-              <div class="result-item" style="margin-bottom: 12px;">
+              <div class="result-item" style="margin-bottom: 12px">
                 <div>
-                  <p id="fibergas_tons">0</p>
+                  <p class="fibergas_tons">0</p>
                 </div>
                 <div>
-                  <p id="mineral_wool_tons">0</p>
+                  <p class="mineral_wool_tons">0</p>
                 </div>
                 <div>
-                  <h3 style="font-size: 18px;">TONNES MÉTRIQUES DE FIBRES UTILISÉES</h3>
+                  <h3 style="font-size: 18px">
+                    TONNES MÉTRIQUES DE FIBRES UTILISÉES
+                  </h3>
                   <p>
-                    Poids : Quiétude<sup>MD</sup> 0,23 lb/pi<sup>2</sup> et laine minérale^ 0,73 lb/pi<sup>2</sup>
+                    Poids : Quiétude<sup>MD</sup> 0,23 lb/pi<sup>2</sup> et
+                    laine minérale^ 0,73 lb/pi<sup>2</sup>
                   </p>
                 </div>
               </div>
-              <div class="result-separator" style="margin-bottom: 8px;"></div>
+              <div class="result-separator" style="margin-bottom: 8px"></div>
               <div class="result-item">
                 <div>
                   <p class="result-item-up-to">Jusqu'à</p>
-                  <p id="fibergas_co2">0</p>
+                  <p class="fibergas_co2">0</p>
                 </div>
                 <div>
                   <p class="result-item-up-to">Jusqu'à</p>
-                  <p id="mineral_wool_co2">0</p>
+                  <p class="mineral_wool_co2">0</p>
                 </div>
                 <div>
-                  <h3 style="font-size: 18px;">TONNES DE CO<sub>2</sub>ÉCONOMISÉES</h3>
+                  <h3 style="font-size: 18px">
+                    TONNES DE CO<sub>2</sub>ÉCONOMISÉES
+                  </h3>
                   <p>Pendant le transport<sup>‡</sup></p>
                 </div>
               </div>
@@ -501,95 +543,150 @@
         <div class="calculator-row">
           <div class="calculator-empty"></div>
           <div class="calculator-cell">
-            <h1 style="font-size: 31px;">IMPACT ENVIRONNEMENTAL</h1>
+            <h1 style="font-size: 31px">IMPACT ENVIRONNEMENTAL</h1>
             <p>
-              L'utilisation des matelas insonorisants ROSE NEXT GEN<sup>MD</sup> FIBERGLAS<sup>MD</sup> QUIÉTUDE<sup>MD</sup> pour réaliser votre prochain projet peut réduire l'impact environnemental.
+              L'utilisation des matelas insonorisants ROSE NEXT GEN<sup>MD</sup>
+              FIBERGLAS<sup>MD</sup> QUIÉTUDE<sup>MD</sup> pour réaliser votre
+              prochain projet peut réduire l'impact environnemental.
             </p>
             <div>
               <div>
-                <h4 style="font-size:21px">UNE ÉCONOMIE DE</h4>
-                <h1 style="font-size:50px">XXX</h1>
-                <p style="margin-top:0">sacs d'isolant<sup>*</sup></p>
+                <h4 style="font-size: 21px">UNE ÉCONOMIE DE</h4>
+                <h1 class="environmental_bags_saved" style="font-size: 50px">
+                  XXX
+                </h1>
+                <p style="margin-top: 0">sacs d'isolant<sup>*</sup></p>
                 <img src="insulation-bags.svg" />
               </div>
-              <div class="environmental-pounds" style="min-width: 110px;">
-                <h4 style="font-size:15px">UNE ÉCONOMIE DE</h4>
-                <h1 id="environmental_pounds">XXX</h1>
-                <p style="font-size: 13px">livres de fibres<br/>utiliées<sup>*</sup></p>
-                <h4 style="font-size:15px">L'ÉQUIVALENT DE</h4>
-                <img src="black-bears.svg" style="margin-bottom: 10px;" />
-                <h1 id="environmental_bears">XXX</h1>
-                <p style="margin-top: 0px;margin-bottom: 0;">ours noirs<sup>~</sup></p>
+              <div class="environmental-pounds" style="min-width: 110px">
+                <h4 style="font-size: 15px">UNE ÉCONOMIE DE</h4>
+                <h1 class="environmental_pounds">XXX</h1>
+                <p style="font-size: 13px">
+                  livres de fibres<br />utiliées<sup>*</sup>
+                </p>
+                <h4 style="font-size: 15px">L'ÉQUIVALENT DE</h4>
+                <img src="black-bears.svg" style="margin-bottom: 10px" />
+                <h1 class="environmental_bears">XXX</h1>
+                <p style="margin-top: 0px; margin-bottom: 0">
+                  ours noirs<sup>~</sup>
+                </p>
               </div>
-              <div class="environmental-impact-or" style="margin-top:-12px">
+              <div class="environmental-impact-or" style="margin-top: -12px">
                 <p>OU</p>
               </div>
               <div class="environmental-tons">
-                <h4 style="font-size:15px">UNE ÉCONOMIE DE</h4>
-                <h1 id="environmental_tons">XXX</h1>
-                <p style="font-size: 13px">tonnes métriques<br/>de fibres utilisées<sup>*</sup></p>
-                <h4 style="font-size:15px">L'ÉQUIVALENT DE</h4>
-                <img src="moose.svg" style="margin-bottom: 5px;" />
-                <h1 id="environmental_moose">XXX</h1>
-                <p style="margin-top: 0;margin-bottom:0;">orignaux<sup>~</sup></p>
+                <h4 style="font-size: 15px">UNE ÉCONOMIE DE</h4>
+                <h1 class="environmental_tons">XXX</h1>
+                <p style="font-size: 13px">
+                  tonnes métriques<br />de fibres utilisées<sup>*</sup>
+                </p>
+                <h4 style="font-size: 15px">L'ÉQUIVALENT DE</h4>
+                <img src="moose.svg" style="margin-bottom: 5px" />
+                <h1 class="environmental_moose">XXX</h1>
+                <p style="margin-top: 0; margin-bottom: 0">
+                  orignaux<sup>~</sup>
+                </p>
               </div>
               <div class="environmental-impact-separator"></div>
               <div class="environmental-co2">
-                <h4 style="font-size:15px">UNE ÉCONOMIE* DE</h4>
-                <p style="font-size: 10px;margin-bottom:-10px;margin-top:-4px">Jusqu'à</p>
-                <h1 id="environmental_co2">XXX</h1>
-                <p style="font-size: 13px">tonnes d'émissions de CO<sub>2</sub><br/>évitées par le transport<sup>*‡</sup></p>
-                <h4 style="font-size:15px;margin-top:18px">L'ÉQUIVALENT DE</h4>
-                <img src="gasoline.svg"  style="margin-bottom: 5px;" />
-                <h1 id="environmental_gasoline">XXX</h1>
-                <p style="margin-top: 0;">litres d'essence consommée<sup>†</sup></p>
+                <h4 style="font-size: 15px">UNE ÉCONOMIE* DE</h4>
+                <p
+                  style="
+                    font-size: 10px;
+                    margin-bottom: -10px;
+                    margin-top: -4px;
+                  "
+                >
+                  Jusqu'à
+                </p>
+                <h1 class="environmental_co2">XXX</h1>
+                <p style="font-size: 13px">
+                  tonnes d'émissions de CO<sub>2</sub><br />évitées par le
+                  transport<sup>*‡</sup>
+                </p>
+                <h4 style="font-size: 15px; margin-top: 18px">
+                  L'ÉQUIVALENT DE
+                </h4>
+                <img src="gasoline.svg" style="margin-bottom: 5px" />
+                <h1 class="environmental_gasoline">XXX</h1>
+                <p style="margin-top: 0">
+                  litres d'essence consommée<sup>†</sup>
+                </p>
               </div>
             </div>
           </div>
           <div class="calculator-cell">
-            <h1 style="font-size: 31px;">ÉCONOMIES SUPPLÉMENTAIRES<sup>*</sup></h1>
+            <h1 style="font-size: 31px">
+              ÉCONOMIES SUPPLÉMENTAIRES<sup>*</sup>
+            </h1>
             <ul>
               <li>
                 <img src="manufacturing.svg" />
-                <p style="font-size: 14px">Énergie pour la fabrication et matières premières</p>
+                <p style="font-size: 14px">
+                  Énergie pour la fabrication et matières premières
+                </p>
               </li>
               <li>
                 <img src="labour.svg" />
-                <p style="font-size: 14px">Main-d'œuvre : moins<br/> de sacs à manipuler et à installer</p>
+                <p style="font-size: 14px">
+                  Main-d'œuvre : moins<br />
+                  de sacs à manipuler et à installer
+                </p>
               </li>
               <li>
                 <img src="delivery.svg" />
-                <p style="font-size: 14px">Coûts de<br/>livraison</p>
+                <p style="font-size: 14px">Coûts de<br />livraison</p>
               </li>
               <li>
                 <img src="cost.svg" />
-                <p style="font-size: 14px">Coût par<br/>pied carré</p>
+                <p style="font-size: 14px">Coût par<br />pied carré</p>
               </li>
             </ul>
           </div>
           <div class="calculator-cell">
             <div>
               <h1>NOTRE MISSION</h1>
-              <h2>BÂTIR UN AVENIR DURABLE GRÂCE À L'INNOVATION DES MATÉRIAUX  </h2>
+              <h2>
+                BÂTIR UN AVENIR DURABLE GRÂCE À L'INNOVATION DES MATÉRIAUX
+              </h2>
             </div>
             <div>
-              <p style="font-size: 10px;padding-top: 4px;">
-               Lorsque vous choisissez un produit pour votre projet, commencez par prendre en compte les spécifications techniques nécessaires. Sélectionnez le produit en fonction de ses caractéristiques de performance pour répondre aux exigences de l'application (feu, acoustique, thermique, humidité, etc.).
+              <p style="font-size: 10px; padding-top: 4px">
+                Lorsque vous choisissez un produit pour votre projet, commencez
+                par prendre en compte les spécifications techniques nécessaires.
+                Sélectionnez le produit en fonction de ses caractéristiques de
+                performance pour répondre aux exigences de l'application (feu,
+                acoustique, thermique, humidité, etc.).
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="disclaimer">
-        <p style="font-size: 9.5px;">
-          <sup>#</sup>Les calculs pour Vancouver, Calgary, Regina et Winnipeg sont basés sur la distance à partir des usines de fabrication de Grand Forks, C.-B. (laine minérale) et d’Edmonton, AB (fibre de verre). Les calculs pour Toronto, Montréal, Fredericton et Halifax sont basés sur la distance à partir des usines de fabrication de Milton, ON (laine minérale) et Scarborough, ON (fibre de verre). ^Isolant en matelas acoustique résistant au feu AFB® <sup>**</sup>Estimations basées sur des hypothèses énoncées. Les économies peuvent varier. <sup>‡</sup>Les moteurs diesels produisent 2,7 kg de CO2 par litre de carburant diesel consommé (Ressources naturelles Canada). La consommation moyenne de carburant des camions lourds sur route est de 29,3 L/100 km (Ressources naturelles Canada). <sup>~</sup>Sur la base d'un poids moyen de 300 livres pour l'ours noir et d'une tonne pour l'orignal. <sup>†</sup>Source : Calculateur des équivalences des émissions de gaz à effet de serre de RNCan Calculator
+        <p style="font-size: 9.5px">
+          <sup>#</sup>Les calculs pour Vancouver, Calgary, Regina et Winnipeg
+          sont basés sur la distance à partir des usines de fabrication de Grand
+          Forks, C.-B. (laine minérale) et d’Edmonton, AB (fibre de verre). Les
+          calculs pour Toronto, Montréal, Fredericton et Halifax sont basés sur
+          la distance à partir des usines de fabrication de Milton, ON (laine
+          minérale) et Scarborough, ON (fibre de verre). ^Isolant en matelas
+          acoustique résistant au feu AFB® <sup>**</sup>Estimations basées sur
+          des hypothèses énoncées. Les économies peuvent varier. <sup>‡</sup>Les
+          moteurs diesels produisent 2,7 kg de CO2 par litre de carburant diesel
+          consommé (Ressources naturelles Canada). La consommation moyenne de
+          carburant des camions lourds sur route est de 29,3 L/100 km
+          (Ressources naturelles Canada). <sup>~</sup>Sur la base d'un poids
+          moyen de 300 livres pour l'ours noir et d'une tonne pour l'orignal.
+          <sup>†</sup>Source : Calculateur des équivalences des émissions de gaz
+          à effet de serre de RNCan Calculator
           <a
             href="https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/calculator/ghg-calculator.cfm#results"
             >Source: NRCAN Greenhouse Gas Equivalencies Calculator</a
           >
         </p>
-        <p style="font-size: 9.5px;">
-          La couleur ROSE est une marque déposée de Owens Corning. © 2024 Owens Corning. Tous droits réservés.
+        <p style="font-size: 9.5px">
+          La couleur ROSE est une marque déposée de Owens Corning. © 2024 Owens
+          Corning. Tous droits réservés.
         </p>
       </div>
     </section>
