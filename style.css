@@ -423,7 +423,7 @@ section.start {
   padding: 10px 14px;
   padding-right: 50px;
   border: 1px solid #d0d5dd;
-  color: rgba(102, 112, 133, 0.8);
+  color: #000;
   text-align: left;
   font-feature-settings: "liga" off;
   font-family: Roboto;
