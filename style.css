@@ -155,6 +155,7 @@ section.start {
   display: none;
   width: 1920px;
   height: 1080px;
+  overflow: hidden;
 }
 
 .calculator-container {
