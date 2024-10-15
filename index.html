@@ -79,16 +79,16 @@
                 <p>Closest City to the Project<sup>#</sup></p>
               </div>
               <div class="select-wrapper">
-                <select>
+                <select id="city-select" name="city-select">
                   <option value="">Select City</option>
-                  <option>Vancouver</option>
-                  <option>Calgary</option>
-                  <option>Regina</option>
-                  <option>Winnipeg</option>
-                  <option>Toronto</option>
-                  <option>Montreal</option>
-                  <option>Fredericton</option>
-                  <option>Halifax</option>
+                  <option value="vancouver">Vancouver</option>
+                  <option value="calgary">Calgary</option>
+                  <option value="regina">Regina</option>
+                  <option value="winnipeg">Winnipeg</option>
+                  <option value="toronto">Toronto</option>
+                  <option value="montreal">Montreal</option>
+                  <option value="fredericton">Fredericton</option>
+                  <option value="halifax">Halifax</option>
                 </select>
               </div>
             </div>
@@ -98,7 +98,13 @@
                 <p>Number of Square Feet of the Project</p>
               </div>
               <div class="input-wrapper">
-                <input type="text" placeholder="# of square feet" />
+                <input
+                  id="sqft-input"
+                  name="sqft-input"
+                  type="number"
+                  pattern="[0-9]*"
+                  placeholder="# of square feet"
+                />
                 <span class="unit">sq ft</span>
               </div>
             </div>
@@ -170,7 +176,7 @@
                 <div></div>
                 <div><p>OR</p></div>
               </div>
-              <div class="result-item">
+              <div class="result-item" style="margin-bottom: 12px;">
                 <div id="fibergas_tons">
                   <p>0</p>
                 </div>
@@ -185,11 +191,14 @@
                   </p>
                 </div>
               </div>
+              <div class="result-separator"></div>
               <div class="result-item">
                 <div id="fibergas_co2">
+                  <p style="font-size:8px;font-family:Roboto;font-weight:400;margin-bottom:-10px;color:#333">up to</p>
                   <p>0</p>
                 </div>
                 <div id="mineral_wool_co2">
+                  <p style="font-size:8px;font-family:Roboto;font-weight:400;margin-bottom:-10px;color:#333">up to</p>
                   <p>0</p>
                 </div>
                 <div>
@@ -211,46 +220,46 @@
             </p>
             <div>
               <div>
-                <h4>SAVINGS OF</h4>
-                <h1>XXX</h1>
-                <p>Bags of Insulation<sup>*</sup></p>
+                <h4 style="font-size:23px">SAVINGS OF</h4>
+                <h1 style="font-size:52px">XXX</h1>
+                <p style="margin-top:0">Bags of Insulation<sup>*</sup></p>
                 <img src="insulation-bags.svg" />
               </div>
-              <div>
-                <h4>SAVINGS OF</h4>
+              <div class="environmental-pounds">
+                <h4 style="font-size:18px">SAVINGS OF</h4>
                 <h1>XXX</h1>
-                <p>Pounds of Fiber Used<sup>*</sup></p>
+                <p>Pounds of<br/>Fiber Used<sup>*</sup></p>
                 <h4>EQUIVALENT TO</h4>
                 <img src="black-bears.svg" />
                 <h1>XXX</h1>
-                <p>Black Bears<sup>~</sup></p>
+                <p style="margin-top: 0;">Black Bears<sup>~</sup></p>
               </div>
               <div class="environmental-impact-or">
                 <p>OR</p>
               </div>
-              <div>
-                <h4>SAVINGS OF</h4>
+              <div class="environmental-tons">
+                <h4 style="font-size:18px">SAVINGS OF</h4>
                 <h1>XXX</h1>
-                <p>Metric Tons Of Fiber Used<sup>*</sup></p>
+                <p>Metric Tons Of<br/>Fiber Used<sup>*</sup></p>
                 <h4>EQUIVALENT TO</h4>
                 <img src="moose.svg" />
                 <h1>XXX</h1>
-                <p>Moose<sup>~</sup></p>
+                <p style="margin-top: 0;">Moose<sup>~</sup></p>
               </div>
               <div class="environmental-impact-separator"></div>
-              <div>
-                <h4>SAVINGS OF</h4>
-                <!--<p>up to</p>-->
+              <div class="environmental-co2">
+                <h4 style="font-size:18px">SAVINGS OF</h4>
+                <p style="font-size: 10px;margin-bottom:-10px;margin-top:-4px">up to</p>
                 <h1>XXX</h1>
                 <p>
-                  Tons of CO<sub>2</sub>Transportation Emissions Avoided<sup
+                  Tons of CO<sub>2</sub><br/>Transportation<br/>Emissions Avoided<sup
                     >*‡</sup
                   >
                 </p>
                 <h4>EQUIVALENT TO</h4>
                 <img src="gasoline.svg" />
                 <h1>XXX</h1>
-                <p>Litres of Gasoline<sup>†</sup></p>
+                <p style="margin-top: 0;">Litres of Gasoline<sup>†</sup></p>
               </div>
             </div>
           </div>
