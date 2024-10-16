@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const calculateButtonEn = document.getElementById("calculate-button-en");
   const calculateButtonFr = document.getElementById("calculate-button-fr");
 
+  const resetButtonEn = document.getElementById("reset-button-en");
+  const resetButtonFr = document.getElementById("reset-button-fr");
+
   let inactivityTimer;
 
   function showCalculator(lang) {
@@ -206,6 +209,30 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("city-select-fr").value = "";
     document.getElementById("sqft-input-en").value = "";
     document.getElementById("sqft-input-fr").value = "";
+
+    const fieldsToReset = [
+      ".fibergas_bags",
+      ".mineral_wool_bags",
+      ".environmental_bags_saved",
+      ".fibergas_pounds",
+      ".mineral_wool_pounds",
+      ".environmental_pounds",
+      ".environmental_bears",
+      ".fibergas_tons",
+      ".mineral_wool_tons",
+      ".environmental_tons",
+      ".environmental_moose",
+      ".fibergas_co2",
+      ".mineral_wool_co2",
+      ".environmental_co2",
+      ".environmental_gasoline",
+    ];
+
+    fieldsToReset.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((element) => {
+        element.textContent = "0";
+      });
+    });
   }
 
   function resetInactivityTimer() {
@@ -220,12 +247,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Show the start section when the page loads
   startButtonEN.addEventListener("click", () => showCalculator("en"));
   startButtonFR.addEventListener("click", () => showCalculator("fr"));
+  resetButtonEn.addEventListener("click", resetCalculator);
+  resetButtonFr.addEventListener("click", resetCalculator);
 
   closeButtons.forEach((button) => {
     button.addEventListener("click", () => {
       showStart();
       resetCalculator();
-      location.reload(); // clears data
     });
   });
 

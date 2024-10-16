@@ -467,12 +467,19 @@ section.start {
   font-weight: 700;
 }
 
-.calculate-button {
+.button-group {
+  display: flex;
+  justify-content: space-between !important;
+  flex-direction: row !important;
+  gap: 16px;
+}
+
+.calculate-button,
+.reset-button {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 15.5px 20px;
-  background-color: #d40f7d;
   color: white;
   border: none;
   font-family: Oswald;
@@ -484,13 +491,37 @@ section.start {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.calculate-button svg {
+.calculate-button {
+  background-color: #d40f7d;
+  margin-right: 28px !important;
+}
+
+.reset-button {
+  background-color: #8e8c8d;
+  margin-left: 0;
+}
+
+.calculate-button svg,
+.reset-button svg {
   margin-right: 10px;
   width: 21px;
   height: 22px;
 }
 
-.calculate-button svg path {
+.reset-button svg {
+  margin-left: -32px;
+  padding-right: 24px;
+  min-height: 22px;
+  min-width: 21px;
+}
+
+#reset-button-fr svg {
+  margin-left: 4px;
+  margin-right: 0px;
+}
+
+.calculate-button svg path,
+.reset-button svg path {
   stroke: currentColor;
 }
 
@@ -501,11 +532,27 @@ section.start {
   padding: 14px 20px;
 }
 
-.calculate-button:active {
-  color: #d40f7d;
+.reset-button:hover {
+  color: #8e8c8d;
+  background-color: white;
+  border: 2px solid #8e8c8d;
+  padding: 14px 20px;
+}
+
+.calculate-button:active,
+.reset-button:active {
   opacity: 0.5;
   background-color: white;
-  border: 2px solid #d40f7d;
+}
+
+.calculate-button:active {
+  color: #d40f7d;
+  border-color: #d40f7d;
+}
+
+.reset-button:active {
+  color: #8e8c8d;
+  border-color: #8e8c8d;
 }
 
 .calculator-row:first-of-type > .calculator-cell:nth-child(4) {
