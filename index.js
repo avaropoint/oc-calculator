@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // calculate bags of wool and qz
     setBagsOfInsulation(
       Math.round(parseInt(sqft.value) / 128),
-      Math.round(parseInt(sqft.value) / 53.3),
+      Math.round(parseInt(sqft.value) / 65),
       formatter
     );
 
