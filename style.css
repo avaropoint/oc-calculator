@@ -784,12 +784,13 @@ section.start {
 }
 
 .calculator-row:last-child > .calculator-cell:nth-child(2) > div > div > img {
+  align-self: center;
   display: block;
-  margin-top: 20px;
+  margin-top: 0;
   padding: 0;
   border: 0;
-  width: 157px;
-  height: 195px;
+  width: 81px;
+  height: 101px;
 }
 
 .calculator-row:last-child > .calculator-cell:nth-child(2) > div > div > h4 {
@@ -1039,16 +1040,16 @@ section.start {
 }
 
 .disclaimer {
-  margin: -2rem 7.2rem 0rem 7.2rem;
+  margin: -2rem 2rem 0rem 2rem;
   padding: 0;
 }
 
 .disclaimer > p {
   color: #333;
   font-family: Roboto;
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 12px;
   margin: 0;
   padding-top: 0.5rem;
 }

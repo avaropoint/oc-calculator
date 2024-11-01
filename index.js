@@ -130,6 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ).toFixed(2),
       formatter
     );
+
+    setCostSavings(sqft.value, 1.2, formatter);
   }
 
   function setBagsOfInsulation(bagsofqz, bagsofwool, formatter) {
@@ -204,6 +206,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function setCostSavings(projectSize, savingsFactor, formatter) {
+    document
+      .querySelectorAll(".environmental_cost_savings")
+      .forEach((element) => {
+        const amount = Math.round(Math.abs(projectSize * savingsFactor));
+        const isFrench = formatter.resolvedOptions().locale === "fr";
+
+        if (isFrench) {
+          element.innerHTML = `${formatter.format(amount)} $`;
+        } else {
+          element.innerHTML = `$${formatter.format(amount)}`;
+        }
+      });
+  }
+
   function resetCalculator() {
     document.getElementById("city-select-en").value = "";
     document.getElementById("city-select-fr").value = "";
@@ -226,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ".mineral_wool_co2",
       ".environmental_co2",
       ".environmental_gasoline",
+      ".environmental_cost_savings",
     ];
 
     fieldsToReset.forEach((selector) => {
