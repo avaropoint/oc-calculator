@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
       formatter
     );
 
-    setCostSavings(sqft.value, 1.2, formatter);
+    setCostSavings(sqft.value, 1.23, formatter);
   }
 
   function setBagsOfInsulation(bagsofqz, bagsofwool, formatter) {
