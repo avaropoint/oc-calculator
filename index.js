@@ -14,16 +14,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButtonEn = document.getElementById("reset-button-en");
   const resetButtonFr = document.getElementById("reset-button-fr");
 
+  const citySelectEn = document.getElementById("city-select-en");
+  const citySelectFr = document.getElementById("city-select-fr");
+
+  const sqftInputEn = document.getElementById("sqft-input-en");
+  const sqftInputFr = document.getElementById("sqft-input-fr");
+
+  const tooltipStartEn = document.getElementById("tooltip_start_en");
+  const tooltipInputEn = document.getElementById("tooltip_input_en");
+  const tooltipCalculateEn = document.getElementById("tooltip_calculate_en");
+
+  const tooltipStartFr = document.getElementById("tooltip_start_fr");
+  const tooltipInputFr = document.getElementById("tooltip_input_fr");
+  const tooltipCalculateFr = document.getElementById("tooltip_calculate_fr");
+
   let inactivityTimer;
+
+  handleTooltipFlow();
 
   function showCalculator(lang) {
     startSection.style.display = "none";
     if (lang === "en") {
       calculatorEN.style.display = "block";
       calculatorFR.style.display = "none";
+      startTooltips("en");
     } else {
       calculatorFR.style.display = "block";
       calculatorEN.style.display = "none";
+      startTooltips("fr");
     }
     resetInactivityTimer();
   }
@@ -37,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function calculate(lang) {
+    hideTooltips();
     const city = document.getElementById("city-select-" + lang);
     const sqft = document.getElementById("sqft-input-" + lang);
 
@@ -251,11 +270,179 @@ document.addEventListener("DOMContentLoaded", () => {
         element.textContent = "0";
       });
     });
+
+    hasSelectedCity = false;
+    hasInteractedWithInput = false;
+    hasShownInputTooltip = false;
+    hasShownCalculateTooltip = false;
+
+    if (inputTimeout) {
+      clearTimeout(inputTimeout);
+    }
+
+    startTooltips();
   }
 
   function resetInactivityTimer() {
     clearTimeout(inactivityTimer);
     inactivityTimer = setTimeout(showStart, 120000); // 2 minutes
+  }
+
+  let hasSelectedCity = false;
+  let hasInteractedWithInput = false;
+  let inputTimeout;
+  let hasShownInputTooltip = false;
+  let hasShownCalculateTooltip = false;
+
+  function showTooltip(tooltip) {
+    tooltip.style.display = "flex";
+    void tooltip.offsetWidth;
+    tooltip.classList.add("visible");
+  }
+
+  function hideTooltip(tooltip) {
+    tooltip.classList.remove("visible");
+    setTimeout(() => {
+      if (!tooltip.classList.contains("visible")) {
+        tooltip.style.display = "none";
+      }
+    }, 300);
+  }
+
+  function startTooltips(lang) {
+    const tooltips =
+      lang === "en"
+        ? {
+            start: tooltipStartEn,
+            input: tooltipInputEn,
+            calculate: tooltipCalculateEn,
+          }
+        : {
+            start: tooltipStartFr,
+            input: tooltipInputFr,
+            calculate: tooltipCalculateFr,
+          };
+
+    showTooltip(tooltips.start);
+    hideTooltip(tooltips.input);
+    hideTooltip(tooltips.calculate);
+
+    hasSelectedCity = false;
+    hasInteractedWithInput = false;
+    hasShownInputTooltip = false;
+    hasShownCalculateTooltip = false;
+
+    if (inputTimeout) {
+      clearTimeout(inputTimeout);
+    }
+  }
+
+  function handleTooltipFlow() {
+    setupLanguageTooltips("en", {
+      select: citySelectEn,
+      input: sqftInputEn,
+      calculate: calculateButtonEn,
+      tooltips: {
+        start: tooltipStartEn,
+        input: tooltipInputEn,
+        calculate: tooltipCalculateEn,
+      },
+    });
+
+    setupLanguageTooltips("fr", {
+      select: citySelectFr,
+      input: sqftInputFr,
+      calculate: calculateButtonFr,
+      tooltips: {
+        start: tooltipStartFr,
+        input: tooltipInputFr,
+        calculate: tooltipCalculateFr,
+      },
+    });
+  }
+
+  function setupLanguageTooltips(lang, elements) {
+    const { select, input, calculate, tooltips } = elements;
+
+    select.addEventListener("click", () => {
+      hideTooltip(tooltips.start);
+    });
+
+    select.addEventListener("change", () => {
+      tooltips.start.style.display = "none";
+      tooltips.input.style.display = "none";
+
+      if (!hasShownCalculateTooltip) {
+        hideTooltip(tooltips.calculate);
+      }
+
+      if (select.value) {
+        hasSelectedCity = true;
+        if (!hasShownInputTooltip) {
+          showTooltip(tooltips.input);
+          hasShownInputTooltip = true;
+        }
+
+        if (inputTimeout) {
+          clearTimeout(inputTimeout);
+        }
+      } else {
+        hasSelectedCity = false;
+      }
+    });
+
+    input.addEventListener("focus", () => {
+      if (hasSelectedCity) {
+        hideTooltip(tooltips.input);
+        hasInteractedWithInput = true;
+      }
+    });
+
+    input.addEventListener("input", () => {
+      if (hasSelectedCity && hasInteractedWithInput) {
+        if (inputTimeout) clearTimeout(inputTimeout);
+        hideTooltip(tooltips.calculate);
+
+        inputTimeout = setTimeout(() => {
+          if (input.value && !hasShownCalculateTooltip) {
+            showTooltip(tooltips.calculate);
+            hasShownCalculateTooltip = true;
+          }
+        }, 3000);
+      }
+    });
+
+    input.addEventListener("blur", () => {
+      if (
+        hasSelectedCity &&
+        hasInteractedWithInput &&
+        input.value &&
+        !hasShownCalculateTooltip
+      ) {
+        showTooltip(tooltips.calculate);
+        hasShownCalculateTooltip = true;
+      }
+    });
+
+    calculate.addEventListener("click", () => {
+      hideTooltip(tooltips.start);
+      hideTooltip(tooltips.input);
+      hideTooltip(tooltips.calculate);
+    });
+  }
+
+  function hideTooltips() {
+    [
+      tooltipStartEn,
+      tooltipInputEn,
+      tooltipCalculateEn,
+      tooltipStartFr,
+      tooltipInputFr,
+      tooltipCalculateFr,
+    ].forEach((tooltip) => {
+      tooltip.style.display = "none";
+      tooltip.classList.remove("visible");
+    });
   }
 
   // Register event listeners

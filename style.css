@@ -489,6 +489,7 @@ section.start {
   line-height: 20px;
   width: 196px;
   transition: background-color 0.3s, color 0.3s;
+  position: relative;
 }
 
 .calculate-button {
@@ -529,7 +530,7 @@ section.start {
   color: #d40f7d;
   background-color: white;
   border: 2px solid #d40f7d;
-  padding: 14px 20px;
+  padding: 13.5px 20px;
 }
 
 .reset-button:hover {
@@ -1052,4 +1053,63 @@ section.start {
   line-height: 12px;
   margin: 0;
   padding-top: 0.5rem;
+}
+
+.tooltip {
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 86px;
+  height: 34px;
+  background-color: #0095ff;
+  color: white;
+  font-family: Oswald;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 12px;
+  opacity: 0;
+  transform: translateY(10px) translateX(-50%);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.tooltip.visible {
+  opacity: 1;
+  transform: translateY(0) translateX(-50%);
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: #0095ff transparent transparent transparent;
+  width: 0;
+  height: 0;
+  transition: inherit;
+}
+
+#tooltip_start_en,
+#tooltip_input_en,
+#tooltip_calculate_en,
+#tooltip_start_fr,
+#tooltip_input_fr,
+#tooltip_calculate_fr {
+  bottom: calc(100% + 20px);
+  left: 50%;
+}
+
+#tooltip_start_en::after,
+#tooltip_input_en::after,
+#tooltip_calculate_en::after,
+#tooltip_start_fr::after,
+#tooltip_input_fr::after,
+#tooltip_calculate_fr::after {
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 35px 20px 0 20px;
 }
