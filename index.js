@@ -38,10 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
       calculatorEN.style.display = "block";
       calculatorFR.style.display = "none";
       startTooltips("en");
+      showOverlays("en");
     } else {
       calculatorFR.style.display = "block";
       calculatorEN.style.display = "none";
       startTooltips("fr");
+      showOverlays("fr");
     }
     resetInactivityTimer();
   }
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function calculate(lang) {
     hideTooltips();
+    hideOverlays(lang);
     const city = document.getElementById("city-select-" + lang);
     const sqft = document.getElementById("sqft-input-" + lang);
 
@@ -151,6 +154,31 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     setCostSavings(sqft.value, 1.23, formatter);
+  }
+
+  function showOverlays(lang) {
+    const calculator = lang === "en" ? calculatorEN : calculatorFR;
+    const cells = calculator.querySelectorAll(".calculator-cell");
+    cells.forEach((cell, index) => {
+      if (
+        !(
+          cell.parentElement.classList.contains("calculator-row") &&
+          cell.parentElement ===
+            cell.parentElement.parentElement.firstElementChild &&
+          (index === 1 || index === 2)
+        )
+      ) {
+        cell.classList.add("overlay");
+      }
+    });
+  }
+
+  function hideOverlays(lang) {
+    const calculator = lang === "en" ? calculatorEN : calculatorFR;
+    const cells = calculator.querySelectorAll(".calculator-cell");
+    cells.forEach((cell) => {
+      cell.classList.remove("overlay");
+    });
   }
 
   function setBagsOfInsulation(bagsofqz, bagsofwool, formatter) {
@@ -280,7 +308,9 @@ document.addEventListener("DOMContentLoaded", () => {
       clearTimeout(inputTimeout);
     }
 
-    startTooltips();
+    const lang = calculatorEN.style.display === "block" ? "en" : "fr";
+    showOverlays(lang);
+    startTooltips(lang);
   }
 
   function resetInactivityTimer() {

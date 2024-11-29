@@ -1113,3 +1113,29 @@ section.start {
   transform: translateX(-50%);
   border-width: 35px 20px 0 20px;
 }
+
+.calculator-cell {
+  position: relative;
+}
+
+.calculator-cell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.calculator-row:first-of-type > .calculator-cell:nth-child(2)::after,
+.calculator-row:first-of-type > .calculator-cell:nth-child(3)::after {
+  display: none;
+}
+
+.calculator-cell.overlay::after {
+  opacity: 1;
+}
